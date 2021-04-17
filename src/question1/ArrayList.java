@@ -19,41 +19,27 @@ public class ArrayList {
     public static void main(String[] args) {
         // TODO code application logic here
         java.util.ArrayList<Integer> array = new java.util.ArrayList<>();
-        Scanner scan =new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         System.out.print("Enter ten integers: ");
-        for(int i=0;i<10;i++)
-        {
+        for (int i = 0; i < 10; i++) {
             array.add(scan.nextInt());
         }
         removeDuplicate(array);
     }
+
     public static void removeDuplicate(java.util.ArrayList<Integer> list) {
-        
+
         java.util.ArrayList<Integer> array = new java.util.ArrayList<>();
-        int temp =0;
-        
-        for(int i=0;i<list.size();i++)
-        {
-        for(int j=i;j<list.size();j++)
-        {
-        if(list.get(i)==list.get(j))
-        {
-        temp++;
-         }
-     }
-        if(temp<=1)
-     {
-    array.add(list.get(i));
+        int temp = 0;
+
+        for (int i = 0; i < list.size(); i++) {
+            if (!array.contains(list.get(i))) {
+                array.add(list.get(i));
             }
-            temp=0;
         }
         System.out.print("The distinct integers ");
-        for(int i=0;i<array.size();i++)
-        {
-            System.out.print(array.get(i)+" ");
-        }  
-    }     
+        for (int i = 0; i < array.size(); i++) {
+            System.out.print(array.get(i) + " ");
+        }
+    }
 }
-    
-    
-
